@@ -1,5 +1,7 @@
 "use client";
 
+import Logo from "@/components/Logo";
+
 function IconCheck() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" className="shrink-0">
@@ -89,13 +91,16 @@ export default function Home() {
           <div className="absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-500 via-teal-400 to-emerald-400 blur-3xl" />
         </div>
 
-        <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-8 -skew-x-12 rounded-sm bg-sky-400" />
-            <span className="text-sm tracking-widest text-neutral-400">RUNWAY CFO</span>
-          </div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <span className="select-none text-6xl md:text-8xl font-extrabold tracking-[0.25em] text-white/5">
+            RUNWAY CFO
+          </span>
+        </div>
+
+        <header className="sticky top-0 z-50 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-white/10">
+          <Logo size="lg" />
           <nav className="hidden gap-6 text-sm md:flex">
-            <a href="#services" className="text-neutral-300 hover:text-white">Services</a>
+            <a href="#offering" className="text-neutral-300 hover:text-white">Offering</a>
             <a href="#how" className="text-neutral-300 hover:text-white">How it works</a>
             <a href="#contact" className="text-neutral-300 hover:text-white">Contact</a>
           </nav>
@@ -109,11 +114,10 @@ export default function Home() {
             Finance for Lean Startups
           </p>
           <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
-            Extend Your Runway. <span className="text-neutral-400">Prepare for Takeoff.</span>
+            Fractional CFO for lean but funded startups.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-neutral-300">
-            Bank-ready and investor-ready support that turns messy spreadsheets into clear,
-            decision-ready packs—fast.
+            Investor-ready reporting, board packs, and runway clarity — without a full-time CFO.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-400">
             Ex-commercial banker (NZ/AU). 10+ years reviewing SME credit files and structuring facilities.
@@ -121,50 +125,81 @@ export default function Home() {
           </p>
           <div className="mt-8 flex justify-center gap-3">
             <a href="#contact" className="rounded-xl bg-sky-400 px-5 py-3 text-sm font-medium text-neutral-950 hover:opacity-90">Request Intro</a>
-            <a href="#services" className="rounded-xl border border-neutral-800 px-5 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-900">View Services</a>
+            <a href="#offering" className="rounded-xl border border-neutral-800 px-5 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-900">View Offering</a>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-6xl px-6 py-12 bg-white">
-        <h2 className="text-xl font-semibold text-sky-400">Services</h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg hover:bg-neutral-50">
-            <div className="flex items-center gap-2 text-sky-400"><IconCheck /><span className="font-semibold text-neutral-800">Check &amp; Polish</span></div>
-            <p className="mt-2 text-sm text-neutral-600">$990 — 5-day turnaround</p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600 list-disc pl-5">
-              <li>Model &amp; metrics diagnostic</li>
-              <li>Banker / investor talking points</li>
-              <li>90-day finance checklist</li>
-            </ul>
-          </div>
+      <div className="w-full bg-white text-neutral-800">
+        {/* Primary offering */}
+        <section id="offering" className="mx-auto max-w-6xl px-6 py-12 bg-white text-neutral-900">
+          <h2 className="text-xl font-semibold text-neutral-900">Primary offering</h2>
 
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg hover:bg-neutral-50">
-            <div className="flex items-center gap-2 text-sky-400"><IconBriefcase /><span className="font-semibold text-neutral-800">Bank Pack</span></div>
-            <p className="mt-2 text-sm text-neutral-600">$2,400 — 10 business days</p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600 list-disc pl-5">
-              <li>Cash-flow + covenant commentary</li>
-              <li>Risk mitigants &amp; deal narrative</li>
-              <li>1-page banker brief (plain English)</li>
-            </ul>
-          </div>
+          {/* Primary card — Retainer */}
+          <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-2xl font-semibold">Fractional CFO Retainer</h3>
+                <p className="mt-2 text-sm text-neutral-600">
+                  Ongoing finance partnership for seed/Series A teams that need investor-grade clarity without hiring full-time.
+                </p>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-neutral-500">from</div>
+                <div className="text-2xl font-bold tracking-tight">$1,900<span className="text-sm font-medium text-neutral-500">/mo</span></div>
+              </div>
+            </div>
 
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg hover:bg-neutral-50">
-            <div className="flex items-center gap-2 text-sky-400"><IconChart /><span className="font-semibold text-neutral-800">Fractional CFO Lite</span></div>
-            <p className="mt-2 text-sm text-neutral-600">from $1,900/mo</p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600 list-disc pl-5">
-              <li>Monthly reporting &amp; runway tracking</li>
-              <li>Scenario planning</li>
-              <li>Board / investor updates</li>
-            </ul>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <ul className="list-disc pl-5 text-sm text-neutral-700 space-y-2">
+                <li>Monthly runway &amp; cash reporting (burn, months left)</li>
+                <li>Investor/board packs in plain English</li>
+                <li>Scenario planning &amp; covenant commentary</li>
+              </ul>
+              <ul className="list-disc pl-5 text-sm text-neutral-700 space-y-2">
+                <li>Founder finance sparring partner</li>
+                <li>Lightweight KPI / metric tracking</li>
+                <li>Fast async turnaround, 5–10 hrs/month</li>
+              </ul>
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a href="#contact" className="rounded-xl bg-sky-400 px-5 py-3 text-sm font-medium text-neutral-950 hover:opacity-90">Book intro</a>
+              <a href="#ad-hoc" className="text-sm text-neutral-700 underline underline-offset-4">Prefer a one-off pack?</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Ad-hoc services */}
+        <section id="ad-hoc" className="mx-auto max-w-6xl px-6 pb-12 bg-white text-neutral-900">
+          <h2 className="text-xl font-semibold text-neutral-900">Ad-hoc services</h2>
+          <p className="mt-2 text-sm text-neutral-600">One-off, fixed-fee entries if you are not ready for a retainer.</p>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:bg-neutral-50">
+              <h3 className="font-semibold">Check &amp; Polish</h3>
+              <p className="mt-1 text-sm text-neutral-600">$990 — 5-day turnaround</p>
+              <ul className="mt-3 space-y-2 text-sm text-neutral-700 list-disc pl-5">
+                <li>Model &amp; metrics diagnostic</li>
+                <li>Investor/banker talking points</li>
+                <li>90-day finance checklist</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:bg-neutral-50">
+              <h3 className="font-semibold">Bank Pack</h3>
+              <p className="mt-1 text-sm text-neutral-600">$2,400 — 10 business days</p>
+              <ul className="mt-3 space-y-2 text-sm text-neutral-700 list-disc pl-5">
+                <li>Cash-flow plus covenant commentary</li>
+                <li>Risk mitigants &amp; deal narrative</li>
+                <li>1-page banker brief (plain English)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
       {/* How it works */}
-      <section id="how" className="mx-auto max-w-6xl px-6 pb-12 bg-white">
-        <h2 className="text-xl font-semibold text-sky-400">How it works</h2>
+      <section id="how" className="mx-auto max-w-6xl px-6 pb-12">
+        <h2 className="text-xl font-semibold text-neutral-900">How it works</h2>
         <ol className="mt-4 grid gap-4 text-sm text-neutral-600 md:grid-cols-4">
           <li className="rounded-xl border border-neutral-200 bg-white p-4 hover:bg-neutral-50"><span className="text-neutral-400">01</span><br/>15-min intro</li>
           <li className="rounded-xl border border-neutral-200 bg-white p-4 hover:bg-neutral-50"><span className="text-neutral-400">02</span><br/>Read-only access to files</li>
@@ -174,13 +209,14 @@ export default function Home() {
       </section>
 
       {/* CTA / Contact */}
-      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20 bg-white">
+      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20">
         <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <h3 className="text-lg font-medium text-sky-400">Get in touch</h3>
+          <h3 className="text-lg font-medium text-neutral-900">Get in touch</h3>
           <p className="mt-2 text-sm text-neutral-600">Tell me what you're trying to fund in the next 90 days.</p>
           <ContactForm />
         </div>
       </section>
+      </div>
 
       <footer className="bg-neutral-950 text-neutral-400 border-t border-neutral-900/80">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-xs text-neutral-500">
